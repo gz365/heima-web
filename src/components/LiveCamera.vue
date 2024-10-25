@@ -5,7 +5,7 @@
     ></iframe>
 
     <iframe
-      src="https://aecloud-test.glodon.com/ivs/api/url/redirect/67124d03e1e2fc001dbb8e96/web"
+      src="https://aecloud-test.glodon.com/ivs/api/url/redirect/671b3781dd51ca001d7a6eb1/web"
     ></iframe>
   </div>
 </template>
