@@ -23,6 +23,7 @@ ws.onmessage = function (e) {
   if (data === 'over') {
     ws.close()
   }
+  console.log('websocket received msg: ', e.data)
   text_arr_ref.value = [...text_arr_ref, data]
 }
 
@@ -62,8 +63,8 @@ function doAnalyze() {
       <p>{{ ws_status }}</p>
       <button @click="doAnalyze">分析安全带佩戴情况</button>
       <div>
-        <p v-for="(item, index) in text_arr_ref" :key="index">
-          {{ item }}
+        <p v-for="(text, index) in text_arr_ref" :key="index">
+          {{ text }}
         </p>
       </div>
     </div>
