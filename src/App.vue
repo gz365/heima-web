@@ -9,7 +9,7 @@ const text_arr_ref = ref([])
 function doAnalyze() {
   let step = 1
 
-  let ws = new WebSocket('ws://localhost:8124')
+  let ws = new WebSocket('ws://127.0.0.1:8124')
 
   // 连接成功后的回调函数
   ws.onopen = function () {
