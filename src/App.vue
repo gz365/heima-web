@@ -14,6 +14,7 @@ ws.onopen = function () {
   console.log('客户端连接成功')
   ws_status.value = '连接服务成功'
   // 向服务器发送消息
+  ws.send('client connected')
 }
 
 // 从服务器接受到信息时的回调函数
