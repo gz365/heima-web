@@ -1,0 +1,12 @@
+FROM dockerpull.com/node:latest as builder
+
+RUN echo "Asia/shanghai" > /etc/timezone
+
+# Global install yarn package manager
+RUN npm config set registry https://registry.npmmirror.com \
+    && mkdir /root/dist \
+    && npm config set registry https://registry.npmmirror.com
+WORKDIR /root/dist/
+
+COPY . .
+RUN npm i
