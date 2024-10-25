@@ -19,12 +19,17 @@ ws.onopen = function () {
 
 // 从服务器接受到信息时的回调函数
 ws.onmessage = function (e) {
-  const data = e.data
-  if (data === 'over') {
-    ws.close()
+  try {
+    const data = e.data
+    if (data === 'over') {
+      ws.close()
+    }
+    console.log('websocket received msg: ', e.data)
+    console.log('text_arr_ref.value: ', text_arr_ref.value)
+    text_arr_ref.value = [...text_arr_ref, data]
+  } catch (error) {
+    console.log('websocket err: ', error, e)
   }
-  console.log('websocket received msg: ', e.data)
-  text_arr_ref.value = [...text_arr_ref, data]
 }
 
 // 连接关闭后的回调函数
