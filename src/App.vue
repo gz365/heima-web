@@ -15,12 +15,13 @@ function doAnalyze() {
   ws.onopen = function () {
     console.log('客户端连接成功')
     // 向服务器发送消息
-    ws.send('hello')
+    ws.send('safeRope')
   }
 
   // 从服务器接受到信息时的回调函数
   ws.onmessage = function (e) {
-    console.log('收到服务器响应', e.data)
+    const data = e.data
+    text_arr_ref.value = [...text_arr_ref, data]
   }
 
   // 连接关闭后的回调函数
