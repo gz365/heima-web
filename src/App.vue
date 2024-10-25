@@ -21,6 +21,9 @@ function doAnalyze() {
   // 从服务器接受到信息时的回调函数
   ws.onmessage = function (e) {
     const data = e.data
+    if (data === 'over') {
+      ws.close()
+    }
     text_arr_ref.value = [...text_arr_ref, data]
   }
 
